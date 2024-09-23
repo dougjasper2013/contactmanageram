@@ -31,8 +31,24 @@
                     <td><?php echo $contact['lastName']; ?></td>
                     <td><?php echo $contact['emailAddress']; ?></td>
                     <td><?php echo $contact['phone']; ?></td>
-                    <td></td> <!-- for edit button -->
-                    <td></td> <!-- for delete button -->
+                    <td>
+                        <form action="update_contact_form.php"
+                            method="post">
+                            <input type="hidden" name="contact_id"
+                            value="<?php echo $contact['contactID']; ?>" />
+                            
+                            <input type="submit" value="Update" />
+                        </form>
+                    </td> <!-- for edit button -->
+                    <td>
+                    <form action="delete_contact.php"
+                            method="post">
+                            <input type="hidden" name="contact_id"
+                            value="<?php echo $contact['contactID']; ?>" />
+                            
+                            <input type="submit" value="Delete" />
+                        </form> 
+                    </td> <!-- for delete button -->
                 </tr>
             <?php endforeach; ?>
         </table>
