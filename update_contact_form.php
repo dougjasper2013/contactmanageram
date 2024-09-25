@@ -43,6 +43,17 @@
             <label>Phone Number:</label>
             <input type="text" name="phone_number"
                 value="<?php echo $contact['phone']; ?>" /><br />
+
+            <label>Status:</label>
+            <input type="radio" name="status" value="member"
+                <?php echo ($contact['status'] == 'member') ? 'checked' : ''; ?> />Member<br />
+            <input type="radio" name="status" value="nonmember"
+                <?php echo ($contact['status'] == 'nonmember') ? 'checked' : ''; ?> />Non-Member<br />
+
+            <label>Birth Date:</label>
+            <input type="date" name="dob"
+                value="<?php echo $contact['dob']; ?>" /><br />
+
         </div>
 
         <div id="buttons">
