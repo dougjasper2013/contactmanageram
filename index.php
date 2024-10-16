@@ -1,9 +1,17 @@
 <?php
+    session_start();
+    if (!isset($_SESSION["isLoggedIn"]))
+    {
+        $url = "login_form.php";
+        header("Location: " . $url);
+        die();
+    }
     require("database.php");
     $queryContacts = 'SELECT * FROM contacts';
     $statement1 = $db->prepare($queryContacts);
     $statement1->execute();
     $contacts = $statement1->fetchAll();
+    // $contacts = array_reverse($contacts);    
     $statement1->closeCursor();
 ?>
     <!DOCTYPE html>
@@ -15,6 +23,8 @@
    <body>
        <?php include("header.php"); ?>
        <main>
+        <p><?php echo $_SESSION["isLoggedIn"]; ?></p>
+        
         <h2>Contact List</h2>
         <table>
             <tr>
@@ -56,7 +66,9 @@
                 </tr>
             <?php endforeach; ?>
         </table>
-        <p><a href="add_contact_form.php">Add Contact</a></p>
+        <p><a href="add_contact_form.php">Add Contact</a></p>        
+        <p><a href="login_form.php">Login</a></p>
+        <p><a href="logout.php">Logout</a></p>
        </main>
        <?php include("footer.php"); ?>
    </body>
