@@ -22,8 +22,7 @@
    </head>
    <body>
        <?php include("header.php"); ?>
-       <main>
-        <p><?php echo $_SESSION["isLoggedIn"]; ?></p>
+       <main>        
         
         <h2>Contact List</h2>
         <table>
@@ -67,7 +66,7 @@
             <?php endforeach; ?>
         </table>
         <p><a href="add_contact_form.php">Add Contact</a></p>        
-        <p><a href="login_form.php">Login</a></p>
+        
         <p><a href="logout.php">Logout</a></p>
        </main>
        <?php include("footer.php"); ?>
