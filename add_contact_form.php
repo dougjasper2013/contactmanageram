@@ -9,7 +9,8 @@
        <main>
         <h2>Add Contact</h2>
 
-        <form action="add_contact.php" method="post" id="add_contact_form">
+        <form action="add_contact.php" method="post" id="add_contact_form"
+            enctype="multipart/form-data">
         <div id="data">
             <label>First Name:</label>
             <input type="text" name="first_name" /><br />
@@ -29,6 +30,9 @@
 
             <label>Birth Date:</label>
             <input type="date" name="dob" /><br />
+
+            <label>Upload Image:</label>
+            <input type="file" name="file1"><br>
         </div>
 
         <div id="buttons">
